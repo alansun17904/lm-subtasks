@@ -1,0 +1,10 @@
+index,inputs,context,topic,org_label,set-0,id,string_label,label
+0,"(('Big', 0, 0, 3),)","('Big Managers on Campus',)",,JJ,train,0,0,0
+1,"(('Managers', 0, 4, 12),)","('Big Managers on Campus',)",,NNS,train,1,1,1
+2,"(('on', 0, 13, 15),)","('Big Managers on Campus',)",,IN,train,2,2,2
+3,"(('Campus', 0, 16, 22),)","('Big Managers on Campus',)",,NN,train,3,3,3
+4,"(('In', 0, 0, 2),)","('In recent years , advanced education for professionals has become a hot topic in the business community .',)",,IN,train,4,2,2
+5,"(('recent', 0, 3, 9),)","('In recent years , advanced education for professionals has become a hot topic in the business community .',)",,JJ,train,5,0,0
+6,"(('years', 0, 10, 15),)","('In recent years , advanced education for professionals has become a hot topic in the business community .',)",,NNS,train,6,1,1
+7,"((',', 0, 16, 17),)","('In recent years , advanced education for professionals has become a hot topic in the business community .',)",,",",train,7,4,4
+8,"(('advanced', 0, 18, 26),)","('In recent years , advanced education for professionals has become a hot topic in the business community .',)",,JJ,train,8,0,0

@@ -1,0 +1,7 @@
+control_task_type: NONE
+num_inputs: 1
+num_labels: 48
+num_probe_folds: 1
+probe_name: probe-pos
+probe_task_type: SENTENCE_TOKENS
+probes_samples_path: test/artifacts
