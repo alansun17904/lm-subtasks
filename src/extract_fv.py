@@ -2,6 +2,7 @@ import torch
 import torch.nn.functional as F
 from transformer_lens import ActivationCache, utils
 from transformers import AutoTokenizer, AutoModel
+import tqdm
 
 from src.token_ds import TokenDataset
 from src.utils import answer_pos_collate
@@ -84,8 +85,19 @@ def patch(model, dl, layer_idx, head_idx):
     return (avg_corr, avg_patched)
 
 
-def avg_indirect_effect():
+def avg_indirect_effect(model, dl):
     """
     Compute the patching score across all attention heads to isolate attention heads
     that are important.
     """
+    n_layers, n_attn = model.cfg.n_layers, model.cfg.n_heads
+    pbar = tqdm.tqdm(total=n_layers * n_attn)
+    acorr, apat = torch.zeros((n_layers, n_attn)), torch.zeros((n_layers, n_attn))
+    for l in range(n_layers):
+        for h in range(n_attn):
+            avg_corr, avg_patched = patch(model, dl, l, h)
+            acorr[l, h] = avg_corr
+            apat[l, h] = avg_patched
+            pbar.update(1)
+    pbar.close()
+    return acorr, apat

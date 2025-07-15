@@ -69,3 +69,4 @@ def test_avg_last_prompt_activation1(model, dataloader1, dataloader2, dataloader
 def test_patch(model, dataloader2):
     fv.patch(model, dataloader2, 1, 2)
     assert False
+
